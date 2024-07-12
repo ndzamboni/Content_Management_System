@@ -1,0 +1,22 @@
+{{> header}}
+<div class="container mt-5">
+  <h1>Your Dashboard</h1>
+  <button class="btn btn-primary mb-3" id="new-post">New Post</button>
+  <div id="post-form" class="mb-3" style="display: none;">
+    <input type="text" id="post-title" class="form-control mb-2" placeholder="Post Title">
+    <textarea id="post-content" class="form-control mb-2" placeholder="Post Content"></textarea>
+    <button class="btn btn-success" id="submit-post">Submit</button>
+  </div>
+  <div class="posts">
+    {{#each posts}}
+    <div class="post card mb-3">
+      <div class="card-body">
+        <h2 class="card-title"><a href="/dashboard/edit/{{this.id}}">{{this.title}}</a></h2>
+        <p class="card-text">{{this.content}}</p>
+        <p class="card-text"><small class="text-muted">by you on {{this.createdAt}}</small></p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{> footer}}

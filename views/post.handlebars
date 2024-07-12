@@ -1,0 +1,24 @@
+{{> header}}
+<div class="container mt-5">
+  <h1>{{title}}</h1>
+  <p>{{content}}</p>
+  <p><small class="text-muted">by {{user.username}} on {{createdAt}}</small></p>
+  <h2>Comments</h2>
+  {{#each comments}}
+  <div class="comment card mb-3">
+    <div class="card-body">
+      <p class="card-text">{{this.comment_text}}</p>
+      <p class="card-text"><small class="text-muted">by {{this.user.username}} on {{this.createdAt}}</small></p>
+    </div>
+  </div>
+  {{/each}}
+  {{#if logged_in}}
+  <div class="form-group">
+    <textarea id="comment-text" class="form-control" placeholder="Add a comment"></textarea>
+    <button class="btn btn-primary mt-2" id="submit-comment">Submit</button>
+  </div>
+  {{else}}
+  <p>You must be logged in to comment.</p>
+  {{/if}}
+</div>
+{{> footer}}
