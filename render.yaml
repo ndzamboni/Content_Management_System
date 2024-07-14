@@ -1,20 +1,14 @@
 services:
   - type: web
-    name: Content_Management_System
+    name: cms-blog
     env: node
     plan: free
     buildCommand: 'npm install'
     startCommand: 'node server.js'
     envVars:
-      - key: DB_NAME
-        value: your_database_name
-      - key: DB_USER
-        value: your_database_user
-      - key: DB_PASSWORD
-        value: your_database_password
-      - key: DB_HOST
-        value: your_database_host
-      - key: DB_PORT
-        value: '5432'
+      - key: DB_URI_INTERNAL
+        fromDatabase:
+          name: your-database-name
+          property: connectionString
       - key: SECRET
         value: your_secret_key
