@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Handle logout button
   const logoutButton = document.querySelector('#logout');
   if (logoutButton) {
     logoutButton.addEventListener('click', async () => {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Handle new post button
   const newPostButton = document.querySelector('#new-post');
   if (newPostButton) {
     newPostButton.addEventListener('click', () => {
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Handle submit post button
   const submitPostButton = document.querySelector('#submit-post');
   if (submitPostButton) {
     submitPostButton.addEventListener('click', async () => {
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Handle submit comment button
   const submitCommentButton = document.querySelector('#submit-comment');
   if (submitCommentButton) {
     submitCommentButton.addEventListener('click', async () => {
@@ -139,6 +143,50 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           alert('Failed to sign up.');
         }
+      }
+    });
+  }
+
+  // Handle edit post form submission
+  const editPostForm = document.querySelector('#edit-post-form');
+  if (editPostForm) {
+    editPostForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const postId = window.location.pathname.split('/').pop();
+      const title = document.querySelector('#post-title').value.trim();
+      const content = document.querySelector('#post-content').value.trim();
+
+      if (title && content) {
+        const response = await fetch(`/api/posts/${postId}`, {
+          method: 'PUT',
+          body: JSON.stringify({ title, content }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+          document.location.replace('/dashboard');
+        } else {
+          alert('Failed to update post.');
+        }
+      }
+    });
+  }
+
+  // Handle delete post button
+  const deletePostButton = document.querySelector('#delete-post');
+  if (deletePostButton) {
+    deletePostButton.addEventListener('click', async () => {
+      const postId = window.location.pathname.split('/').pop();
+
+      const response = await fetch(`/api/posts/${postId}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete post.');
       }
     });
   }
