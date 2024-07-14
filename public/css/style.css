@@ -1,50 +1,79 @@
 body {
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  
-  header, footer {
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .dark-mode header, .dark-mode footer {
-    background-color: #333;
-    color: #e0e0e0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .post {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  #login-container, #signup-container {
-    transition: opacity 0.5s;
-  }
-  
-  .d-none {
-    display: none;
-  }
-  
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header, footer {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode header, .dark-mode footer {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.light-mode header, .light-mode footer {
+  background-color: #f8f9fa;
+  color: #000000;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode .post {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .post {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode button {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.dark-mode button:hover {
+  background-color: #007bff;
+}
+
+#login-container, #signup-container {
+  transition: opacity 0.5s;
+}
+
+.d-none {
+  display: none;
+}

@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modeToggle = document.querySelector('#mode-toggle');
   modeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
     if (document.body.classList.contains('dark-mode')) {
       modeToggle.textContent = 'Light Mode';
       localStorage.setItem('mode', 'dark');
@@ -94,8 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load mode preference
   if (localStorage.getItem('mode') === 'dark') {
     document.body.classList.add('dark-mode');
+    document.body.classList.remove('light-mode');
     modeToggle.textContent = 'Light Mode';
   } else {
+    document.body.classList.add('light-mode');
+    document.body.classList.remove('dark-mode');
     modeToggle.textContent = 'Dark Mode';
   }
 
