@@ -1,13 +1,16 @@
 {{> header}}
 <div class="container mt-5">
-  {{#each posts}}
-  <div class="post card mb-3">
-    <div class="card-body">
-      <h2 class="card-title"><a href="/post/{{this.id}}">{{this.title}}</a></h2>
-      <p class="card-text">{{this.content}}</p>
-      <p class="card-text"><small class="text-muted">by {{this.user.username}} on {{this.createdAt}}</small></p>
+  <h1>Tech Blog</h1>
+  <div class="posts">
+    {{#each posts}}
+    <div class="post card mb-3">
+      <div class="card-body">
+        <h2 class="card-title"><a href="/post/{{this.id}}">{{this.title}}</a></h2>
+        <p class="card-text">{{this.content}}</p>
+        <p class="card-text"><small class="text-muted">by {{this.user.username}} on {{format_date this.created_at}}</small></p>
+      </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>
 {{> footer}}
