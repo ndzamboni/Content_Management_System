@@ -1,0 +1,15 @@
+{{> header}}
+<div class="container mt-5">
+  <h1>Edit Post</h1>
+  <form id="edit-post-form" class="mt-3">
+    <div class="form-group">
+      <input type="text" id="post-title" class="form-control" placeholder="Post Title" value="{{post.title}}">
+    </div>
+    <div class="form-group">
+      <textarea id="post-content" class="form-control" placeholder="Post Content">{{post.content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="button" class="btn btn-danger" id="delete-post">Delete Post</button>
+  </form>
+</div>
+{{> footer}}
