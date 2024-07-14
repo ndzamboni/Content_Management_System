@@ -8,7 +8,7 @@ services:
     envVars:
       - key: DB_URI_INTERNAL
         fromDatabase:
-          name: your-database-name
+          name: cms_blog_db
           property: connectionString
       - key: SECRET
         fromEnv: SECRET
