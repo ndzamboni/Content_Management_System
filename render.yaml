@@ -11,4 +11,4 @@ services:
           name: your-database-name
           property: connectionString
       - key: SECRET
-        value: your_secret_key
+        fromEnv: SECRET
