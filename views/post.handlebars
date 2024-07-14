@@ -2,13 +2,13 @@
 <div class="container mt-5">
   <h1>{{title}}</h1>
   <p>{{content}}</p>
-  <p><small class="text-muted">by {{user.username}} on {{createdAt}}</small></p>
+  <p><small class="text-muted">by {{user.username}} on {{format_date created_at}}</small></p>
   <h2>Comments</h2>
   {{#each comments}}
   <div class="comment card mb-3">
     <div class="card-body">
       <p class="card-text">{{this.comment_text}}</p>
-      <p class="card-text"><small class="text-muted">by {{this.user.username}} on {{this.createdAt}}</small></p>
+      <p class="card-text"><small class="text-muted">by {{this.user.username}} on {{format_date this.created_at}}</small></p>
     </div>
   </div>
   {{/each}}

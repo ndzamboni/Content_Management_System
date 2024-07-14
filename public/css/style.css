@@ -33,41 +33,41 @@ header, footer {
   padding: 20px;
 }
 
-.post {
+.post, .comment {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.light-mode .post {
+.light-mode .post, .light-mode .comment {
   background-color: #ffffff;
   color: #000000;
 }
 
-.dark-mode .post {
+.dark-mode .post, .dark-mode .comment {
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #76148a;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #311736;
 }
 
 .dark-mode button {
-  background-color: #0056b3;
+  background-color: #76148a;
   color: #fff;
 }
 
 .dark-mode button:hover {
-  background-color: #007bff;
+  background-color: #311736;
 }
 
 #login-container, #signup-container {
