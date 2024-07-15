@@ -1,30 +1,11 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
 header, footer {
   transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode header, .dark-mode footer {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-.light-mode header, .light-mode footer {
-  background-color: #f8f9fa;
-  color: #000000;
 }
 
 .container {
@@ -33,47 +14,78 @@ header, footer {
   padding: 20px;
 }
 
-.post, .comment {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.light-mode .post, .light-mode .comment {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.dark-mode .post, .dark-mode .comment {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #76148a;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
 button:hover {
-  background-color: #311736;
+  filter: brightness(1.2);
 }
 
-.dark-mode button {
-  background-color: #76148a;
-  color: #fff;
+.post, .comment {
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode button:hover {
-  background-color: #311736;
+/* Miami Vice Light Mode */
+body.light-mode {
+  background-color: #FFFCF2;
+  color: #333333;
 }
 
-#login-container, #signup-container {
-  transition: opacity 0.5s;
+body.light-mode header, body.light-mode footer {
+  background-color: #FF6F61;
+  color: #333333;
 }
 
-.d-none {
-  display: none;
+body.light-mode .post, body.light-mode .comment {
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+body.light-mode button {
+  background-color: #50C9CE;
+  color: #FFFFFF;
+}
+
+body.light-mode button:hover {
+  background-color: #FF6F61;
+}
+
+body.light-mode a {
+  color: #50C9CE;
+}
+
+/* Cyberpunk Dark Mode */
+body.dark-mode {
+  background-color: #0D0D0D;
+  color: #E0E0E0;
+}
+
+body.dark-mode header, body.dark-mode footer {
+  background-color: #FF00FF;
+  color: #E0E0E0;
+}
+
+body.dark-mode .post, body.dark-mode .comment {
+  background-color: #1E1E1E;
+  color: #E0E0E0;
+}
+
+body.dark-mode button {
+  background-color: #00FFFF;
+  color: #0D0D0D;
+}
+
+body.dark-mode button:hover {
+  background-color: #FF00FF;
+}
+
+body.dark-mode a {
+  color: #00FFFF;
 }

@@ -10,10 +10,17 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Comment,
+        },
       ],
     });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const posts = postData.map((post) => {
+      const plainPost = post.get({ plain: true });
+      plainPost.commentCount = post.comments.length;
+      return plainPost;
+    });
 
     res.render('home', {
       posts,

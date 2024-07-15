@@ -132,21 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (signupForm) {
     signupForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const username = document.querySelector('#signup-username').value.trim();
-      const password = document.querySelector('#signup-password').value.trim();
+      const usernameElement = document.querySelector('#signup-username');
+      const passwordElement = document.querySelector('#signup-password');
+      
+      // Debugging logs
+      console.log('usernameElement:', usernameElement);
+      console.log('passwordElement:', passwordElement);
 
-      if (username && password) {
-        const response = await fetch('/api/users/signup', {
-          method: 'POST',
-          body: JSON.stringify({ username, password }),
-          headers: { 'Content-Type': 'application/json' },
-        });
+      if (usernameElement && passwordElement) {
+        const username = usernameElement.value.trim();
+        const password = passwordElement.value.trim();
 
-        if (response.ok) {
-          document.location.replace('/dashboard');
-        } else {
-          alert('Failed to sign up.');
+        if (username && password) {
+          const response = await fetch('/api/users/signup', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+
+          if (response.ok) {
+            document.location.replace('/dashboard');
+          } else {
+            alert('Failed to sign up.');
+          }
         }
+      } else {
+        console.error('Signup form elements not found.');
       }
     });
   }

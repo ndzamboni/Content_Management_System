@@ -1,16 +1,27 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DB_URI_INTERNAL, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false, // Adjust this based on your PostgreSQL setup
-    },
-  },
-});
+const sequelize = process.env.NODE_ENV === 'production'
+  ? new Sequelize(process.env.DB_URI_INTERNAL, {
+      dialect: 'postgres',
+      protocol: 'postgres',
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // Adjust this based on your PostgreSQL setup
+        },
+      },
+    })
+  : new Sequelize(process.env.DB_URI_EXTERNAL, {
+      dialect: 'postgres',
+      protocol: 'postgres',
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // Adjust this based on your PostgreSQL setup
+        },
+      },
+    });
 
 module.exports = sequelize;
 
