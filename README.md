@@ -4,6 +4,13 @@
 
 This project is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts. The site is built from scratch and follows the Model-View-Controller (MVC) paradigm, using Handlebars.js as the templating language, Sequelize as the ORM, and express-session for authentication. The application is deployed on Render and connects to an external PostgreSQL database.
 
+<!-- screenshot -->
+
+![Screenshot](/demo/demo1.PNG)
+![Screenshot](/demo/demo2.PNG)
+![Screenshot](/demo/demo3.PNG)
+
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -129,4 +136,63 @@ Content_Management_System/
 ├── package.json
 ├── schema.sql
 └── server.js
+```
 
+## API Endpoints
+
+### User Routes
+
+- `POST /api/users/signup`: Sign up a new user.
+- `POST /api/users/login`: Log in a user.
+- `POST /api/users/logout`: Log out the current user.
+
+### Post Routes
+
+- `GET /api/posts`: Get all posts.
+- `POST /api/posts`: Create a new post.
+- `GET /api/posts/:id`: Get a single post by ID.
+- `PUT /api/posts/:id`: Update a post by ID.
+- `DELETE /api/posts/:id`: Delete a post by ID.
+
+### Comment Routes
+
+- `POST /api/comments`: Create a new comment.
+- `GET /api/comments/:postId`: Get all comments for a specific post.
+
+## Features
+
+- **User Authentication**: Sign up, login, and logout functionalities with session management.
+- **Create and Manage Posts**: Users can create new posts, edit, and delete their own posts.
+- **Commenting System**: Users can comment on posts and view comments.
+- **Responsive Design**: The application is styled with Bootstrap for responsiveness.
+- **Dark Mode/Light Mode Toggle**: Users can switch between a Miami Vice themed light mode and a Cyberpunk themed dark mode.
+
+## Built With
+
+- [Node.js](https://nodejs.org/) - JavaScript runtime
+- [Express.js](https://expressjs.com/) - Web framework for Node.js
+- [Sequelize](https://sequelize.org/) - ORM for SQL databases
+- [PostgreSQL](https://www.postgresql.org/) - Relational database management system
+- [Handlebars.js](https://handlebarsjs.com/) - Templating engine
+- [Bootstrap](https://getbootstrap.com/) - CSS framework for responsive design
+- [Render](https://render.com/) - Cloud platform for deploying web services
+
+## Contributing
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a pull request.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Acknowledgments
+
+- [OpenAI](https://openai.com/) for the assistance in writing this README.
+- [Render](https://render.com/) for hosting services.
+- [Bootstrap](https://getbootstrap.com/) for the responsive design framework.
+- [Sequelize](https://sequelize.org/) for the ORM tool.
+- [Handlebars.js](https://handlebarsjs.com/) for the templating engine.
