@@ -80,7 +80,7 @@ Ensure you have the following installed:
 
 The application is also deployed on Render. Visit the following URL to access the deployed version:
 
-- [CMS Blog-Nick Zamboni]([https://your-app-name.onrender.com](https://content-management-system-rigk.onrender.com))
+- [CMS Blog-Nick Zamboni]([https://your-app-name.onrender.com](https://content-management-system-rigk.onrender.com)
 
 ## Features
 
